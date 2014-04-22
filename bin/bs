@@ -1,0 +1,7 @@
+#!/bin/bash
+
+eval "$(awk '{ print "export " $0}' .env)"
+
+if [[ $# -gt 0 ]]; then
+  $@
+fi
