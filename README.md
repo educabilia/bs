@@ -81,6 +81,11 @@ Installation
 
 Place `bin/bs` somewhere in your `$PATH`.
 
+With Homebrew:
+
+    $ brew tap educabilia/tooling
+    $ brew install bs
+
 Support
 -------
 
