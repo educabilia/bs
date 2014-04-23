@@ -4,4 +4,6 @@ eval "$(awk '{ print "export " $0}' .env)"
 
 if [[ $# -gt 0 ]]; then
   $@
+elif [[ -z $PS2 ]]; then
+  $SHELL
 fi
