@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [[ -f .env ]]; then
+  echo "No .env file found. Aborting." >&2
+  exit 1
+fi
+
 eval "$(awk '{ print "export " $0}' .env)"
 
 if [[ $# -gt 0 ]]; then
