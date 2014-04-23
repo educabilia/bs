@@ -81,6 +81,12 @@ Installation
 
 Place `bin/bs` somewhere in your `$PATH`.
 
+Support
+-------
+
+All of the features are tested on Bash and Zsh. We'll happily take patches
+to make `bs` POSIX-compliant.
+
 Acknowledgements
 ----------------
 
