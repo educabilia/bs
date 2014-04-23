@@ -1,11 +1,9 @@
 #!/bin/bash
 
-die() {
-  echo "$@" >&2
+if ! [[ -f .env ]]; then
+  echo "No .env file found. Aborting." >&2
   exit 1
-}
-
-[[ -f .env ]] || die "No .env file found. Aborting."
+fi
 
 eval "$(awk '{ print "export " $0}' .env)"
 
