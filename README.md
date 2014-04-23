@@ -57,8 +57,8 @@ set.  So, what if you need to run `irb` inside a bare shell?
 We realized we could replace `gs` by setting the appropriate variables in our
 `.env` file:
 
-    GS_HOME=$(pwd)/.gs
-    GS_PATH=$(pwd)/.gs:$(gem env path)
+    GEM_HOME=$(pwd)/.gs
+    GEM_PATH=$(pwd)/.gs:$(gem env path)
     PATH=$(pwd)/.gs/bin:$PATH
 
 Now we had everything in our `.env` file and `foreman start` would pick it
