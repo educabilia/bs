@@ -1,14 +1,13 @@
 #!/bin/bash
 
-if ! [[ -f .env ]]; then
+if [[ -f .env ]]; then
+  eval "$(awk '{ print "export " $0}' .env)"
+
+  if [[ $# -gt 0 ]]; then
+    "$@"
+  elif [[ -z $PS2 ]]; then
+    $SHELL
+  fi
+else
   echo "No .env file found. Aborting." >&2
-  exit 1
-fi
-
-eval "$(awk '{ print "export " $0}' .env)"
-
-if [[ $# -gt 0 ]]; then
-  "$@"
-elif [[ -z $PS2 ]]; then
-  $SHELL
 fi
